@@ -21,7 +21,6 @@
         justify-content: end;
       }
       .container {
-        
       }
       .btn {
         background-color: #87c9f1;
@@ -40,9 +39,9 @@
       .progress.danger {
         background: repeating-linear-gradient(
           -55deg,
-          rgb(254,149,136),
+          rgb(254, 149, 136),
           rgb(255, 189, 180) 5px,
-          rgb(254,149,136) 5px,
+          rgb(254, 149, 136) 5px,
           rgb(255, 189, 180) 10px
         );
       }
@@ -52,24 +51,25 @@
       .progress.info {
         background: repeating-linear-gradient(
           -55deg,
-          rgb(179,218,246),
+          rgb(179, 218, 246),
           rgb(203, 233, 255) 5px,
-          rgb(179,218,246) 5px,
+          rgb(179, 218, 246) 5px,
           rgb(203, 233, 255) 10px
         );
       }
       .progress.warning {
         background: repeating-linear-gradient(
           -55deg,
-          rgb(252,198,78),
+          rgb(252, 198, 78),
           rgb(248, 211, 130) 5px,
-          rgb(252,198,78) 5px,
+          rgb(252, 198, 78) 5px,
           rgb(248, 211, 130) 10px
         );
       }
     </style>
   </head>
   <body>
+      <!-- email: simeonnortey, github name: leleking -->
     <div class="container">
       <div class="progress-wrapper">
         <div class="progress success" id="progress">
@@ -104,10 +104,10 @@
       var width = 50;
       var progress = setInterval(() => {
         width += 1;
-        var elms = document.querySelectorAll("[id='progress']")
-        for(var i = 0; i < elms.length; i++) {
-            elms[i].style.width = width + "%";
-            elms[i].innerHTML = width + "%";
+        var elms = document.querySelectorAll("[id='progress']");
+        for (var i = 0; i < elms.length; i++) {
+          elms[i].style.width = width + "%";
+          elms[i].innerHTML = width + "%";
         }
         console.log(width);
         if (width === 100) {
