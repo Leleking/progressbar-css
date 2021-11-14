@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .progress-wrapper {
+        width: 400px;
+        background: #ebebeb;
+        height: 100%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      }
+      .progress {
+        background: blue;
+        width: 40%;
+        border-radius: 20px;
+        display: flex;
+        justify-content: end;
+      }
+      .container {
+        
+      }
+      .btn {
+        background-color: #87c9f1;
+        border-radius: 20px;
+        padding: 10px;
+      }
+      .progress.success {
+        background: repeating-linear-gradient(
+          -55deg,
+          rgb(177, 204, 119),
+          rgb(219, 235, 188) 5px,
+          rgb(177, 204, 119) 5px,
+          rgb(219, 235, 188) 10px
+        );
+      }
+      .progress.danger {
+        background: repeating-linear-gradient(
+          -55deg,
+          rgb(254,149,136),
+          rgb(255, 189, 180) 5px,
+          rgb(254,149,136) 5px,
+          rgb(255, 189, 180) 10px
+        );
+      }
+      .progress.white {
+        background: white;
+      }
+      .progress.info {
+        background: repeating-linear-gradient(
+          -55deg,
+          rgb(179,218,246),
+          rgb(203, 233, 255) 5px,
+          rgb(179,218,246) 5px,
+          rgb(203, 233, 255) 10px
+        );
+      }
+      .progress.warning {
+        background: repeating-linear-gradient(
+          -55deg,
+          rgb(252,198,78),
+          rgb(248, 211, 130) 5px,
+          rgb(252,198,78) 5px,
+          rgb(248, 211, 130) 10px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-wrapper">
+        <div class="progress success" id="progress">
+          <div id="progress-text">50% &nbsp;</div>
+        </div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress danger" id="progress">
+          <div id="progress-text">50% &nbsp;</div>
+        </div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress white" id="progress">
+          <div id="progress-text">50% &nbsp;</div>
+        </div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress info" id="progress">
+          <div id="progress-text">50% &nbsp;</div>
+        </div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress warning" id="progress">
+          <div id="progress-text">50% &nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn" onclick="completeProgress()">Finish</button>
+  </body>
+  <script>
+    function completeProgress() {
+      var width = 50;
+      var progress = setInterval(() => {
+        width += 1;
+        var elms = document.querySelectorAll("[id='progress']")
+        for(var i = 0; i < elms.length; i++) {
+            elms[i].style.width = width + "%";
+            elms[i].innerHTML = width + "%";
+        }
+        console.log(width);
+        if (width === 100) {
+          clearInterval(progress);
+        }
+      }, 20);
+    }
+  </script>
+</html>
